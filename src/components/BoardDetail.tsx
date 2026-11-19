@@ -169,6 +169,13 @@ export default function BoardDetail() {
             >
               수정
             </Link>
+            <Link
+              to={`/board/reply/${view.board.board_num}`}
+              state={{ board: view.board, from }}
+              className="btn-link"
+            >
+              답글
+            </Link>
             {!askPass && (
               <button type="button" onClick={openDelete}>
                 삭제

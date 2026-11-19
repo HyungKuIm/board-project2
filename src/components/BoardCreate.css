@@ -77,3 +77,12 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* 답글 작성: 원글 정보 */
+.reply-parent {
+  margin: 0;
+  padding: 10px 12px;
+  border-left: 3px solid currentColor;
+  opacity: 0.8;
+  font-size: 0.95em;
+}

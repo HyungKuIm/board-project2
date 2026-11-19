@@ -38,3 +38,6 @@ export interface Page<T> {
 
 /** PUT /api/boards/{board_num} 요청 본문 (등록과 동일한 형식) */
 export type BoardUpdateRequest = BoardCreateRequest
+
+/** POST /api/boards/{board_num}/replies 요청 본문 (등록과 동일한 형식) */
+export type BoardReplyRequest = BoardCreateRequest

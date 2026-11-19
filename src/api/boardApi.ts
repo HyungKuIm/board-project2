@@ -2,6 +2,7 @@ import type {
   Board,
   BoardCreateRequest,
   BoardDetail,
+  BoardReplyRequest,
   BoardUpdateRequest,
   Page,
 } from '../types/board'
@@ -89,4 +90,17 @@ export async function deleteBoard(
     body: JSON.stringify({ board_pass }),
   })
   if (!res.ok) throw await toError(res, '글을 삭제하지 못했습니다.')
+}
+
+/** 답글 등록: parentNum 글에 대한 답글 */
+export async function createReply(
+  parentNum: number,
+  body: BoardReplyRequest,
+): Promise<void> {
+  const res = await fetch(`/api/boards/${parentNum}/replies`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(body),
+  })
+  if (!res.ok) throw await toError(res, '답글을 등록하지 못했습니다.')
 }
