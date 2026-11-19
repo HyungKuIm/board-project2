@@ -14,6 +14,14 @@ export interface Board {
   board_date: string
 }
 
+/** POST /api/boards 요청 본문 */
+export interface BoardCreateRequest {
+  board_name: string
+  board_pass: string
+  board_subject: string
+  board_content: string
+}
+
 /** 페이징 응답 */
 export interface Page<T> {
   content: T[]

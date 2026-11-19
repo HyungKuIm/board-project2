@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { Link } from 'react-router'
 import { fetchBoards } from '../api/boardApi'
 import type { Board, Page } from '../types/board'
 import './BoardList.css'
@@ -59,9 +60,14 @@ export default function BoardList() {
     <section className="board">
       <header className="board-header">
         <h1>익명 게시판</h1>
-        <span className="board-count">
-          전체 <strong>{total}</strong>건
-        </span>
+        <div className="board-header-right">
+          <span className="board-count">
+            전체 <strong>{total}</strong>건
+          </span>
+          <Link to="/board/create" className="btn-write">
+            글쓰기
+          </Link>
+        </div>
       </header>
 
       {error ? (

@@ -17,8 +17,28 @@
   letter-spacing: -0.5px;
 }
 
+.board-header-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
 .board-count {
   font-size: 14px;
+}
+
+.btn-write {
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  background: var(--accent);
+  border-radius: 4px;
+  padding: 6px 14px;
+  text-decoration: none;
+}
+
+.btn-write:hover {
+  opacity: 0.9;
 }
 
 .board-count strong {
