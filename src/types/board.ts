@@ -14,6 +14,11 @@ export interface Board {
   board_date: string
 }
 
+/** GET /api/boards/{board_num} 응답 (목록 항목 + 본문) */
+export interface BoardDetail extends Board {
+  board_content: string
+}
+
 /** POST /api/boards 요청 본문 */
 export interface BoardCreateRequest {
   board_name: string
@@ -30,3 +35,6 @@ export interface Page<T> {
   total_elements: number
   total_pages: number
 }
+
+/** PUT /api/boards/{board_num} 요청 본문 (등록과 동일한 형식) */
+export type BoardUpdateRequest = BoardCreateRequest

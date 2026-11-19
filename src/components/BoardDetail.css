@@ -1,0 +1,134 @@
+.board-detail {
+  border-top: 2px solid var(--text-h);
+}
+
+.detail-header {
+  padding: 20px 4px 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.detail-header h1 {
+  margin: 0 0 12px;
+  font-size: 26px;
+  line-height: 1.35;
+  letter-spacing: -0.3px;
+  word-break: break-word;
+}
+
+.detail-header .reply-mark {
+  font-size: inherit;
+}
+
+.detail-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 20px;
+  margin: 0;
+  font-size: 14px;
+}
+
+.detail-meta > div {
+  display: flex;
+  gap: 6px;
+}
+
+.detail-meta dt {
+  color: var(--text);
+}
+
+.detail-meta dd {
+  margin: 0;
+  color: var(--text-h);
+  font-variant-numeric: tabular-nums;
+}
+
+.detail-file {
+  padding: 10px 4px;
+  font-size: 14px;
+  border-bottom: 1px solid var(--border);
+}
+
+.detail-content {
+  min-height: 200px;
+  padding: 24px 4px 32px;
+  color: var(--text-h);
+  font-size: 16px;
+  line-height: 1.75;
+  white-space: pre-wrap;
+  word-break: break-word;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 16px;
+}
+
+.board .btn-link {
+  display: inline-block;
+  font-size: 14px;
+  color: var(--text-h);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 6px 14px;
+  text-decoration: none;
+}
+
+.board .btn-link:hover {
+  border-color: var(--accent-border);
+}
+
+@media (max-width: 640px) {
+  .detail-header h1 {
+    font-size: 21px;
+  }
+}
+
+.board-detail .form-error {
+  color: #e5484d;
+  font-size: 14px;
+  text-align: right;
+}
+
+.delete-confirm {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.delete-confirm label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-h);
+}
+
+.delete-confirm input {
+  font: inherit;
+  font-size: 14px;
+  color: var(--text-h);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 6px 10px;
+  width: 200px;
+}
+
+.delete-confirm input:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.board .btn-danger {
+  color: #fff;
+  background: #e5484d;
+  border-color: #e5484d;
+  font-weight: 600;
+}
+
+.board .btn-danger:disabled {
+  opacity: 0.6;
+  cursor: default;
+}

@@ -1,6 +1,8 @@
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router'
 import BoardList from './components/BoardList'
 import BoardCreate from './components/BoardCreate'
+import BoardDetail from './components/BoardDetail'
+import BoardUpdate from './components/BoardUpdate'
 import './App.css'
 
 function App() {
@@ -10,6 +12,8 @@ function App() {
         <Route path="/" element={<Navigate to="/board" replace />} />
         <Route path="/board" element={<BoardList />} />
         <Route path="/board/create" element={<BoardCreate />} />
+        <Route path="/board/update/:id" element={<BoardUpdate />} />
+        <Route path="/board/:id" element={<BoardDetail />} />
         <Route path="*" element={<Navigate to="/board" replace />} />
       </Routes>
     </BrowserRouter>

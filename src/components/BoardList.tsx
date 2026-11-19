@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Link } from 'react-router'
+import { Link, useLocation, useSearchParams } from 'react-router'
 import { fetchBoards } from '../api/boardApi'
 import type { Board, Page } from '../types/board'
 import './BoardList.css'
@@ -22,7 +22,13 @@ function formatDate(value: string): string {
 }
 
 export default function BoardList() {
-  const [page, setPage] = useState(0)
+  // 현재 페이지는 URL(?page=1, 1부터 시작)에 보관 → 상세에서 돌아와도 유지
+  const location = useLocation()
+  const [searchParams, setSearchParams] = useSearchParams()
+  const pageParam = Number(searchParams.get('page'))
+  const page = Number.isInteger(pageParam) && pageParam > 0 ? pageParam - 1 : 0
+  const setPage = (p: number) =>
+    setSearchParams(p > 0 ? { page: String(p + 1) } : {})
   const [data, setData] = useState<Page<Board> | null>(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
@@ -116,7 +122,12 @@ export default function BoardList() {
                           └ RE:
                         </span>
                       )}
-                      <a href={`#/boards/${b.board_num}`}>{b.board_subject}</a>
+                      <Link
+                        to={`/board/${b.board_num}`}
+                        state={{ from: location.search }}
+                      >
+                        {b.board_subject}
+                      </Link>
                       {b.board_file && (
                         <span className="file-mark" title="첨부파일">
                           📎
